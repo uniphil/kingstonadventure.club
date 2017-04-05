@@ -4,3 +4,4 @@
 # https://tendenci.readthedocs.org
 
 # Your common dependencies here.
+dj-database-url==0.4.2
