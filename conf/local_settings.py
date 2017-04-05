@@ -43,9 +43,10 @@ SITE_MODE = 'prod'
 ADMINS = ()
 MANAGERS = ADMINS
 
+POSTGIS_ENGINE = 'django.contrib.gis.db.backends.postgis';
 DATABASES = {
-    'default': dj_database_url.config() if 'DATABASE_URL' in environ else {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+    'default': dj_database_url.config(engine=POSTGIS_ENGINE) if 'DATABASE_URL' in environ else {
+        'ENGINE': POSTGIS_ENGINE,
         'NAME': 'adventure_club',
         'HOST': 'localhost',
         'USER': 'postgres',
